@@ -12,4 +12,11 @@ carController.addCar = async (req, res) => {
     res.json({'status': 'Auto guardado correctamente'});
 };
 
+carController.deleteCar = async(req,res) => {
+    await carModel.findByIdAndDelete(req.params.id);
+    res.json({status: 'El carro se ha eliminado exitosamente'});
+}
+
+
+
 module.exports = carController;
